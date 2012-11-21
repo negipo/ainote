@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require 'mac-event-monitor'
+
+def main
+  monitor = Mac::EventMonitor::Monitor.new
+  monitor.add_listener(:key_down) do |event|
+    if event.keycode == 36
+      ainote
+    end
+  end
+
+  monitor.run
+end
+
+def ainote
+  system('afplay', "data/#{rand(5)}.m4a")
+end
+
+main
