@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'mac-event-monitor'
+require 'active_support/core_ext'
 
 def main
   monitor = Mac::EventMonitor::Monitor.new
@@ -14,7 +15,7 @@ def main
 end
 
 def ainote
-  system('afplay', "data/#{rand(5)}.m4a")
+  system('afplay', Dir.glob('data/*').sample)
 end
 
 main
