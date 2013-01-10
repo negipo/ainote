@@ -15,7 +15,7 @@ def main
 end
 
 def ainote
-  system('afplay', Dir.glob('data/*').sample)
+  fork { system('afplay', Dir.glob('data/*').sample) }
 end
 
 main
