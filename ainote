@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'mac-event-monitor'
-require 'active_support/core_ext'
 
 def main
   monitor = Mac::EventMonitor::Monitor.new
